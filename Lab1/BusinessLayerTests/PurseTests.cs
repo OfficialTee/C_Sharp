@@ -228,7 +228,7 @@ namespace BusinessLayerTests
                 Currency = "USD",
                 Category = category,
                 Description = "March",
-                Date = new DateTime(2021, 03, 14, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 03, 14, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             var transaction2 = new Transaction(2, purse.Id, user.Id)
             {
@@ -236,7 +236,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category,
                 Description = "March",
-                Date = new DateTime(2021, 03, 10, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 03, 10, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             var transaction3 = new Transaction(3, purse.Id, user.Id)
             {
@@ -244,7 +244,7 @@ namespace BusinessLayerTests
                 Currency = "EUR",
                 Category = category,
                 Description = "April",
-                Date = new DateTime(2021, 04, 20, 15, 0, 0),
+                Date = new DateTimeOffset(2021, 04, 20, 15, 0, 0, new TimeSpan(2, 0, 0)),
                 File = "Photo"
             };
 
@@ -301,7 +301,7 @@ namespace BusinessLayerTests
                 Currency = "USD",
                 Category = category,
                 Description = "March",
-                Date = new DateTime(2021, 03, 14, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 03, 14, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             var transaction2 = new Transaction(2, purse.Id, user.Id)
             {
@@ -309,7 +309,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category,
                 Description = "August",
-                Date = new DateTime(2021, 07, 10, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 07, 10, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             var transaction3 = new Transaction(3, purse.Id, user.Id)
             {
@@ -317,7 +317,7 @@ namespace BusinessLayerTests
                 Currency = "EUR",
                 Category = category,
                 Description = "December",
-                Date = new DateTime(2021, 12, 20, 15, 0, 0),
+                Date = new DateTimeOffset(2021, 12, 20, 15, 0, 0, new TimeSpan(2, 0, 0)),
                 File = "Photo"
             };
 
@@ -374,7 +374,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category,
                 Description = "March",
-                Date = new DateTime(2021, 03, 14, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 03, 14, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             var transaction2 = new Transaction(2, purse.Id, user.Id)
             {
@@ -382,7 +382,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category,
                 Description = "August",
-                Date = new DateTime(2021, 07, 10, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 07, 10, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             var transaction3 = new Transaction(3, purse.Id, user.Id)
             {
@@ -390,7 +390,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category,
                 Description = "November",
-                Date = new DateTime(2021, 11, 20, 15, 0, 0),
+                Date = new DateTimeOffset(2021, 11, 20, 15, 0, 0, new TimeSpan(2, 0, 0)),
                 File = "Photo"
             };
             var transaction4 = new Transaction(4, purse.Id, user.Id)
@@ -399,7 +399,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category,
                 Description = "December",
-                Date = new DateTime(2021, 12, 20, 15, 0, 0),
+                Date = new DateTimeOffset(2021, 12, 20, 15, 0, 0, new TimeSpan(2, 0, 0)),
                 File = "Photo"
             };
 
@@ -408,11 +408,11 @@ namespace BusinessLayerTests
             purse.Transactions.Add(transaction3);
             purse.Transactions.Add(transaction4);
 
-            var expected = 
-                "1 -400 UAH Household March 14.03.2021 15:00:00 1 1" +
-                "  2 -500 UAH Household August 10.07.2021 15:00:00 1 1" +
-                "  3 -402 UAH Household November 20.11.2021 15:00:00 1 1" +
-                "  4 -1023 UAH Household December 20.12.2021 15:00:00 1 1  ";
+            var expected =
+                "1 -400 UAH Household March 14.03.2021 15:00:00 +02:00 1 1" +
+                "  2 -500 UAH Household August 10.07.2021 15:00:00 +02:00 1 1" +
+                "  3 -402 UAH Household November 20.11.2021 15:00:00 +02:00 1 1" +
+                "  4 -1023 UAH Household December 20.12.2021 15:00:00 +02:00 1 1  ";
 
             //Act
             var actual = interaction.GetLastTansactions(purse);
@@ -461,7 +461,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category,
                 Description = "March",
-                Date = new DateTime(2021, 03, 14, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 03, 14, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             var transaction2 = new Transaction(2, purse.Id, user.Id)
             {
@@ -469,7 +469,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category,
                 Description = "August",
-                Date = new DateTime(2021, 07, 10, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 07, 10, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             var transaction3 = new Transaction(3, purse.Id, user.Id)
             {
@@ -477,7 +477,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category,
                 Description = "November",
-                Date = new DateTime(2021, 11, 20, 15, 0, 0),
+                Date = new DateTimeOffset(2021, 11, 20, 15, 0, 0, new TimeSpan(2, 0, 0)),
                 File = "Photo"
             };
             var transaction4 = new Transaction(4, purse.Id, user.Id)
@@ -486,7 +486,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category,
                 Description = "December",
-                Date = new DateTime(2021, 12, 20, 15, 0, 0),
+                Date = new DateTimeOffset(2021, 12, 20, 15, 0, 0, new TimeSpan(2, 0, 0)),
                 File = "Photo"
             };
 
@@ -496,8 +496,8 @@ namespace BusinessLayerTests
             purse.Transactions.Add(transaction4);
 
             var expected =
-                "3 -402 UAH Household November 20.11.2021 15:00:00 1 1" +
-                "  4 -1023 UAH Household December 20.12.2021 15:00:00 1 1  ";
+                "3 -402 UAH Household November 20.11.2021 15:00:00 +02:00 1 1" +
+                "  4 -1023 UAH Household December 20.12.2021 15:00:00 +02:00 1 1  ";
 
             //Act
             var actual = interaction.DownloadTransactionsFromIndex(purse, 3);

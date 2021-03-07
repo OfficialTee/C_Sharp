@@ -11,7 +11,7 @@ namespace BusinessLayer
         private string _currency;
         private Category _category;
         private string _description;
-        private DateTime _date;
+        private DateTimeOffset _date;
         private string? _file;
         private int _purseId;
         private int _userId;
@@ -22,7 +22,7 @@ namespace BusinessLayer
         public string Currency { get => _currency; set => _currency = value; }
         public Category Category { get => _category; set => _category = value; }
         public string Description { get => _description; set => _description = value; }
-        public DateTime Date { get => _date; set => _date = value; }
+        public DateTimeOffset Date { get => _date; set => _date = value; }
         public string File { get => _file; set => _file = value; }
         public int PurseId { get => _purseId; set => _purseId = value; }
         public int UserId { get => _userId; set => _userId = value; }

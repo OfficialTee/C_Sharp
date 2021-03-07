@@ -47,7 +47,7 @@ namespace BusinessLayerTests
                 Currency = "USD",
                 Category = category,
                 Description = "Novus purchase",
-                Date = new DateTime(2021, 01, 14, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 01, 14, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             Transaction.InstanceCount += 1;
             var transaction2 = new Transaction(2, purse.Id, user.Id)
@@ -56,7 +56,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category,
                 Description = "Ashan purchase",
-                Date = new DateTime(2021, 01, 10, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 01, 10, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             Transaction.InstanceCount += 1;
             var transaction3 = new Transaction(3, purse.Id, user.Id)
@@ -65,7 +65,7 @@ namespace BusinessLayerTests
                 Currency = "EUR",
                 Category = category,
                 Description = "McDonalds purchase",
-                Date = new DateTime(2021, 01, 20, 15, 0, 0),
+                Date = new DateTimeOffset(2021, 01, 20, 15, 0, 0, new TimeSpan(2, 0, 0)),
                 File = "Photo"
             };
             Transaction.InstanceCount += 1;
@@ -129,7 +129,7 @@ namespace BusinessLayerTests
                 Currency = "USD",
                 Category = category1,
                 Description = "Novus purchase",
-                Date = new DateTime(2021, 01, 14, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 01, 14, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             var transaction2 = new Transaction(2, purse.Id, user1.Id)
             {
@@ -137,7 +137,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category1,
                 Description = "Ashan purchase",
-                Date = new DateTime(2021, 01, 10, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 01, 10, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             var transaction3 = new Transaction(3, purse.Id, user1.Id)
             {
@@ -145,7 +145,7 @@ namespace BusinessLayerTests
                 Currency = "EUR",
                 Category = category1,
                 Description = "McDonalds purchase",
-                Date = new DateTime(2021, 01, 20, 15, 0, 0),
+                Date = new DateTimeOffset(2021, 01, 20, 15, 0, 0, new TimeSpan(2, 0, 0)),
                 File = "Photo"
             };
             purse.Transactions.Add(transaction1);
@@ -250,7 +250,7 @@ namespace BusinessLayerTests
                 Currency = "EUR",
                 Category = category,
                 Description = "McDonalds purchase",
-                Date = new DateTime(2021, 01, 20, 15, 0, 0),
+                Date = new DateTimeOffset(2021, 01, 20, 15, 0, 0, new TimeSpan(2, 0, 0)),
                 File = "Photo"
             };
 
@@ -260,7 +260,7 @@ namespace BusinessLayerTests
                 Currency = "EUR",
                 Category = category,
                 Description = "KFC purchase",
-                Date = new DateTime(2021, 01, 20, 15, 0, 0),
+                Date = new DateTimeOffset(2021, 01, 20, 15, 0, 0, new TimeSpan(2, 0, 0)),
                 File = "Photo"
             });
 
@@ -312,7 +312,7 @@ namespace BusinessLayerTests
                 Currency = "EUR",
                 Category = category,
                 Description = "McDonalds purchase",
-                Date = new DateTime(2021, 01, 20, 15, 0, 0),
+                Date = new DateTimeOffset(2021, 01, 20, 15, 0, 0, new TimeSpan(2, 0, 0)),
                 File = "Photo"
             };
             purse.Transactions.Add(transaction);

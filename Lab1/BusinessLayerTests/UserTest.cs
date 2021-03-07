@@ -90,7 +90,7 @@ namespace BusinessLayerTests
                 Currency = "USD",
                 Category = category1,
                 Description = "Novus purchase",
-                Date = new DateTime(2021, 01, 14, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 01, 14, 15, 0, 0, new TimeSpan(2, 0, 0))
             };          
             var transaction2 = new Transaction(2, purse.Id, user2.Id)
             {
@@ -98,7 +98,7 @@ namespace BusinessLayerTests
                 Currency = "UAH",
                 Category = category2,
                 Description = "HM purchase",
-                Date = new DateTime(2021, 01, 20, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 01, 20, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             purse.Transactions.Add(transaction1);
             purse.Transactions.Add(transaction2);
@@ -148,7 +148,7 @@ namespace BusinessLayerTests
                 Currency = "USD",
                 Category = category,
                 Description = "Novus purchase",
-                Date = new DateTime(2021, 01, 14, 15, 0, 0)
+                Date = new DateTimeOffset(2021, 01, 14, 15, 0, 0, new TimeSpan(2, 0, 0))
             };
             purse.Transactions.Add(transaction);
 
